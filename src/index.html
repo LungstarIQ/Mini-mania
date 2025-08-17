@@ -2,12 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>FlippingGame</title>
+  <title>Mini Mania</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+    body {
+      background-color: #ebebc4;
+      color: #7c7e84;
+      transition: background-color 0.5s ease, color 0.5s ease;
+      font-family: Roboto, sans-serif;
+      margin: 0;
+    }
+  </style>
+
+  <!-- Angular build styles (update hash after build if needed) -->
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
 <body>
   <app-root></app-root>
+
+  <!-- Angular build scripts (hashes depend on your build output) -->
+  <script src="runtime.js" type="module"></script>
+  <script src="polyfills.js" type="module"></script>
+  <script src="main.js" type="module"></script>
 </body>
 </html>
