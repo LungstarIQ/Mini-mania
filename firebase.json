@@ -1,7 +1,6 @@
 {
   "hosting": {
-    
-    "public": "dist/flipping-game/browser",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
