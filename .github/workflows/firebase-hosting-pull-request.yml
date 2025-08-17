@@ -16,7 +16,7 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: npm ci
+        run: npm ci || npm install
 
       # Build Angular app using local CLI
       - name: Build Angular app
