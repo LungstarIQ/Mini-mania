@@ -1,0 +1,56 @@
+<div *ngIf="showIntro" class="intro-screen" (click)="startGame()">
+  <p>🧠 Match the pairs as fast as you can! <br> Click anywhere to start!</p>
+</div>
+
+<div class="game-container">
+
+  <!--
+  <div class="high-score-board">
+    <h2>🏆 High Scores</h2>
+    <ul>
+      <li *ngFor="let score of highScores">
+        {{ score.level }} - Time Left: {{ score.time }}s - Moves: {{ score.moves }}
+      </li>
+    </ul>
+  </div>
+  -->
+
+  <h1>Memory Game</h1>
+
+  <div class="info">
+    <p>⏳ Time: {{ countdown }}s</p>
+    <p>🎯 Moves: {{ moves }}</p>
+  </div>
+  
+  <div class="game-board">
+    <div 
+      *ngFor="let card of cards" 
+      class="card" 
+      [class.flipped]="card.flipped || card.matched" 
+      (click)="flipCard(card)"
+    >
+      <div class="card-inner">
+        <div class="card-front">❓</div>
+        <div class="card-back">{{ card.value }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="gameOver" class="win-screen">
+    <h2>🎉 GameOver 🎉</h2>
+    <p>Level: {{ currentLevel }}</p>
+    <p>Time Left: {{ countdown }}s</p>
+    <p>Moves: {{ moves }}</p>
+    <button (click)="restartGame()">🔄 Play Again</button>
+  </div>
+
+  <div *ngIf="gameWon && nextLevel" class="win-screen">
+    <h3>🎉 You Won! 🎉</h3>
+    <p>Level: {{ currentLevel }}</p>
+    <p>Time Left: {{ countdown }}s</p>
+    <p>Total Score: {{ totalScore }}xp</p>
+    <button (click)="nextLevel()" class="restart-btn">Next Level</button>
+    <button (click)="restartGame()" >🔄 Play Again</button>
+  </div>
+  
+</div>
